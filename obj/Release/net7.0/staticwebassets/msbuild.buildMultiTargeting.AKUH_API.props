@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\AKUH_API.props" />
+</Project>

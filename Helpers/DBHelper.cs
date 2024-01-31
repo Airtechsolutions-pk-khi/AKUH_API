@@ -11,7 +11,7 @@ namespace WebAPICode.Helpers
 {
     public class DBHelper
     {
-        private static readonly string connectionString = "data source=sql8001.site4now.net;initial catalog=db_a97e9c_aku;persist security info=True;user id=db_a97e9c_aku_admin;password=Tech@123;";
+        private static readonly string connectionString = "data source=sql8001.site4now.net;initial catalog=db_aa4101_akuh;persist security info=True;user id=db_aa4101_akuh_admin;password=Tech@123;";
 
         public static IEnumerable<object> PushTokens { get; internal set; }
 
@@ -148,6 +148,7 @@ namespace WebAPICode.Helpers
                 connection.Close();
             }
         }
+         
 
         public DataTable GetTableFromSP(string sp)
         {
@@ -345,6 +346,35 @@ namespace WebAPICode.Helpers
             {
                 connection.Close();
                 command.Dispose();
+            }
+        }
+        public async Task<int> ExecuteNonQueryReturnAsync(string sp, SqlParameter[] prms)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(sp, connection)
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandTimeout = connection.ConnectionTimeout
+                })
+                {
+                    try
+                    {
+                        await connection.OpenAsync();
+
+                        if (prms != null && prms.Length > 0)
+                        {
+                            command.Parameters.AddRange(prms);
+                        }
+
+                        int result = await command.ExecuteNonQueryAsync();
+                        return result;
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
+                }
             }
         }
 
