@@ -43,17 +43,17 @@ namespace AKUH_API.Models
         public UserBLL? login { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
-       
+
     }
     public class RspUser
     {
         public int? UserId { get; set; }
         public string? Status { get; set; }
         public string? Description { get; set; }
-        
+
     }
     public class RspForgetPwd
-    {         
+    {
         public string? Status { get; set; }
         public string? Password { get; set; }
     }
@@ -83,7 +83,7 @@ namespace AKUH_API.Models
         public string? FinalDate { get; set; }
     }
     public class RspEditUser
-    {        
+    {
         public string? Status { get; set; }
         public string? Description { get; set; }
 
@@ -123,7 +123,7 @@ namespace AKUH_API.Models
     {
         public int? ID { get; set; }
 
-        public string? Name { get; set; }        
+        public string? Name { get; set; }
 
         public string? Image { get; set; }
 
@@ -143,7 +143,7 @@ namespace AKUH_API.Models
         public List<BannerBLL> banner { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
-        
+
     }
     public class BannerBLL
     {
@@ -188,7 +188,7 @@ namespace AKUH_API.Models
         public bool IsFeatured { get; set; }
 
         public string Location { get; set; }
-       
+
         public string FromDate { get; set; }
 
         public string ToDate { get; set; }
@@ -231,8 +231,8 @@ namespace AKUH_API.Models
         public DateTime? Updatedon { get; set; }
 
         public int? UpdatedBy { get; set; }
-        
-        public List<EventImageBLL> ImgList  { get; set; }
+
+        public List<EventImageBLL> ImgList { get; set; }
         public List<SpeakerBLL> Speakers { get; set; }
         public List<OrganizerBLL> Organizers { get; set; }
     }
@@ -269,7 +269,7 @@ namespace AKUH_API.Models
     public class EventAttendeesEmailBLL
     {
         public int AttendeesID { get; set; }
-            
+
         public int? EventID { get; set; }
 
         public int? UserID { get; set; }
@@ -319,6 +319,21 @@ namespace AKUH_API.Models
 
         public int? UpdatedBy { get; set; }
 
+    }
+
+    public class AttendeeRegsiterBLL
+    {
+        public int UserID { get; set; }
+        public string? UserName { get; set; }
+        public string? Email { get; set; }
+        public string? Image { get; set; }
+        public string? Address { get; set; }
+        public string? ContactNo { get; set; }
+        public string? Password { get; set; }
+        public int? StatusID { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
+        public int? UpdatedBy { get; set; }
     }
     public class EventCategoryBLL
     {
@@ -394,7 +409,7 @@ namespace AKUH_API.Models
         public int? status { get; set; }
     }
     public class RspOrganizer
-    {       
+    {
         public List<OrganizerBLL> organizer { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
@@ -425,19 +440,19 @@ namespace AKUH_API.Models
 
         public string? Name { get; set; }
 
-        
+
         public string? Image { get; set; }
 
         public int? StatusID { get; set; }
 
         public DateTime? Createdon { get; set; }
 
-       
+
         public int? UpdatedBy { get; set; }
 
     }
     public class RspToken
-    {        
+    {
         public string? description { get; set; }
         public int? status { get; set; }
     }
@@ -493,14 +508,14 @@ namespace AKUH_API.Models
 
     }
     public class RspSetting
-    {       
+    {
         public SettingBLL? setting { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
     }
     public class SettingBLL
     {
-        public int SettingID { get; set; }        
+        public int SettingID { get; set; }
 
         public string About { get; set; }
 
@@ -528,13 +543,13 @@ namespace AKUH_API.Models
     public class ChairBLL
     {
         public string MsgChair { get; set; }
-         
-        public string ImgChair { get; set; }         
+
+        public string ImgChair { get; set; }
     }
     public class ConferenceChairBLL
-    {         
+    {
         public string MsgConferenceChair { get; set; }
-         
+
         public string ImgConChair { get; set; }
 
     }
@@ -549,10 +564,10 @@ namespace AKUH_API.Models
         public int? StatusID { get; set; }
 
         public DateTime? Createdon { get; set; }
-         
+
     }
     public class AttendeesUpdtBLL
-    {       
+    {
         public int? EventID { get; set; }
 
         public int? UserID { get; set; }
@@ -574,7 +589,7 @@ namespace AKUH_API.Models
         public string? PhoneNo { get; set; }
         public string? Occupation { get; set; }
         public string? ImageSS { get; set; }
-        
+
         public string? Gender { get; set; }
         public int? StatusID { get; set; }
         public DateTime? Createdon { get; set; } = DateTime.UtcNow.AddMinutes(300);
