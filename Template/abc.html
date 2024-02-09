@@ -1,287 +1,332 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
+﻿<head>
+    <style type="text/css" title="x-apple-mail-formatting"></style>
+
+    <!--[if !mso]>
+
+    <!-- -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!--<![endif]-->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-
+    <meta name="viewport" content="width = 375, initial-scale = -1">
     <style type="text/css">
-        body, p, div {
-            font-family: inherit;
-            font-size: 14px;
+        /* Client-specific Styles */
+        #outlook a {
+            padding: 0;
         }
-
+        /* Force Outlook to provide a "view in browser" menu link. */
         body {
-            color: #000000;
-        }
-
-            body a {
-                color: #1188E6;
-                text-decoration: none;
-            }
-
-        p {
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
             margin: 0;
             padding: 0;
         }
-
-        table.wrapper {
+        /* Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design. */
+        .ExternalClass {
+            width: 100%;
+        }
+            /* Force Hotmail to display emails at full width */
+            .ExternalClass,
+            .ExternalClass p,
+            .ExternalClass span,
+            .ExternalClass font,
+            .ExternalClass td,
+            .ExternalClass div {
+                line-height: 100%;
+            }
+        /* Force Hotmail to display normal line spacing.*/
+        #backgroundTable {
+            margin: 0;
+            padding: 0;
             width: 100% !important;
+            line-height: 100% !important;
             table-layout: fixed;
-            -webkit-font-smoothing: antialiased;
-            -webkit-text-size-adjust: 100%;
-            -moz-text-size-adjust: 100%;
-            -ms-text-size-adjust: 100%;
+            min-width: 280px;
         }
 
-        img.max-width {
-            max-width: 100% !important;
+        img {
+            outline: none;
+            text-decoration: none;
+            border: none;
+            -ms-interpolation-mode: bicubic;
         }
 
-        .column.of-2 {
-            width: 50%;
+        a img {
+            border: none;
         }
 
-        .column.of-3 {
-            width: 33.333%;
+        .image_fix {
+            display: block;
         }
 
-        .column.of-4 {
-            width: 25%;
+        p {
+            margin: 0px 0px !important;
         }
 
-        @media screen and (max-width:480px) {
-            .preheader .rightColumnContent,
-            .footer .rightColumnContent {
-                text-align: left !important;
+        a {
+            color: #00843D;
+            text-decoration: none;
+        }
+        /*STYLES*/
+        table[class=full] {
+            width: 100%;
+            clear: both;
+            min-width: 280px;
+        }
+
+        table table {
+            table-layout: auto;
+        }
+        /*IPAD STYLES*/
+        @media only screen and (max-width: 640px) {
+            a[href^="tel"],
+            a[href^="sms"] {
+                text-decoration: none;
+                color: #00843D;
+                /* or whatever your want */
+                pointer-events: none;
+                cursor: default;
             }
 
-                .preheader .rightColumnContent div,
-                .preheader .rightColumnContent span,
-                .footer .rightColumnContent div,
-                .footer .rightColumnContent span {
-                    text-align: left !important;
-                }
-
-            .preheader .rightColumnContent,
-            .preheader .leftColumnContent {
-                font-size: 80% !important;
-                padding: 5px 0;
+            .mobile_link a[href^="tel"],
+            .mobile_link a[href^="sms"] {
+                text-decoration: default;
+                color: #00843D !important;
+                pointer-events: auto;
+                cursor: default;
             }
 
-            table.wrapper-mobile {
-                width: 100% !important;
-                table-layout: fixed;
+            table[class=devicewidth] {
+                width: 440px !important;
+                text-align: center !important;
             }
 
-            img.max-width {
-                height: auto !important;
-                max-width: 100% !important;
+            table[class=devicewidthinner] {
+                width: 420px !important;
+                text-align: center !important;
             }
 
-            a.bulletproof-button {
-                display: block !important;
-                width: auto !important;
-                font-size: 80%;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
+            img[class=banner] {
+                width: 440px !important;
+                height: 220px !important;
             }
 
-            .columns {
-                width: 100% !important;
+            img[class=colimg2] {
+                width: 440px !important;
+                height: 220px !important;
+            }
+        }
+        /*IPHONE STYLES*/
+        @media only screen and (max-width: 480px) {
+            a[href^="tel"],
+            a[href^="sms"] {
+                text-decoration: none;
+                color: #00843D;
+                /* or whatever your want */
+                pointer-events: none;
+                cursor: default;
             }
 
-            .column {
-                display: block !important;
-                width: 100% !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
+            .mobile_link a[href^="tel"],
+            .mobile_link a[href^="sms"] {
+                text-decoration: default;
+                color: #00843D !important;
+                pointer-events: auto;
+                cursor: default;
+            }
+
+            table[class=devicewidth] {
+                width: 280px !important;
+                text-align: center !important;
+            }
+
+            table[class=devicewidthinner] {
+                width: 260px !important;
+                text-align: center !important;
+            }
+
+            img[class=banner] {
+                width: 280px !important;
+                height: 140px !important;
+            }
+
+            img[class=colimg2] {
+                width: 280px !important;
+                height: 140px !important;
+            }
+
+            td[class=mobile-hide] {
+                display: none !important;
+            }
+
+            td[class="padding-bottom25"] {
+                padding-bottom: 25px !important;
             }
         }
     </style>
-    <!--user entered Head Start-->
-    <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Viga', sans-serif;
-        }
-    </style><!--End Head user entered-->
 </head>
+<body style="background-color: #fff; ">
+    <div style="display:none;font-size:0;max-height:0;line-height:0;padding:0;mso-hide:all;"></div>
+    <table cellpadding="0" cellspacing="0" border="0" align="center">
+        <tbody>
+            <tr>
+                <td width="580">
+                    <table cellpadding="0" cellspacing="0" border="0" align="center" style="border: 1px solid #BFC0CD; border-collapse: separate; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; ">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
+                                        <tbody>
+                                            <tr>
+                                                <td class="hard-td-spacer" style="width: 75px; ">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 75px; "></table>
+                                                </td>
+                                                <td style="width: 100%; ">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <div style="display: none; font-size: 1px; color: #fff; line-height:  1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; ">Accept Invite</div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!--<tr>
+                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="30px">&nbsp;</td>
+                                                                            </tr>-->
+                                                                            <tr>
+                                                                                <td align="left" style="padding-top:25px;">
+                                                                                    <div class="InviteEmailUltimate-logo" height="25px"><a href="#"><img src="logo-new.png" style="height:100px; display: block; border: none; outline: none; text-decoration: none; text-align: center; font-size: 20px; " title="Asana" align="center" height="20" width="102.4" alt="Asana" border="0"></a></div>
 
-<body>
-    <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:14px; font-family:inherit; color:#000000; background-color:#f0f0f0;">
-        <div class="webkit">
-            <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#f0f0f0">
-                <tbody>
-                    <tr>
-                        <td valign="top" bgcolor="#f0f0f0" width="100%">
-                            <table width="100%" role="content-container" class="outer" align="center" cellpadding="0" cellspacing="0" border="0">
-                                <tbody>
-                                    <tr>
-                                        <td width="100%">
-                                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>
-                                                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%; max-width:600px;" align="center">
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td role="modules-container" style="padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor="#ffffff" width="100%" align="left">
-                                                                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" role="module" data-type="columns" style="padding:30px 20px 0px 30px;">
-                                                                                <tbody>
-                                                                                    <tr role="module-content">
-                                                                                        <td height="100%" valign="top">
-                                                                                            <table class="column" width="550" style="width:550px; border-spacing:0; border-collapse:collapse; margin:0px 0px 0px 0px;" cellpadding="0" cellspacing="0" align="left" border="0" bgcolor="">
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <td style="padding:0px;margin:0px;border-spacing:0;">
-                                                                                                            <table class="wrapper" role="module" data-type="image" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="b422590c-5d79-4675-8370-a10c2c76af02">
-                                                                                                                <tbody>
-                                                                                                                    <tr>
-                                                                                                                        <td style="">
+                                                                                </td>
+                                                                            </tr>
+                                                                            <!--<tr>
+                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="45px">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="10px">&nbsp;</td>
+                                                                            </tr>-->
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <table cellpadding="0" cellspacing="0" border="0">
+                                                                        <tbody>
+                                                                            <tr>
 
-                                                                                                                            <img class="max-width" border="0" style="display:block; width: 138px;" alt="" data-proportionally-constrained="true" data-responsive="false" src="http://mamjiadmin.airtechsolutions.pk/assets/img/logo-new.png">
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </tbody>
-                                                                                                            </table>
-                                                                                                            <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="264ee24b-c2b0-457c-a9c1-d465879f9935">
-                                                                                                                <tbody>
-                                                                                                                    <tr>
-                                                                                                                        <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                                                                                                            <div>
+                                                                                <td class="soft-td-spacer" style="width: 20px; display: block; ">&nbsp;</td>
+                                                                                <td style="padding-top: 25px;  font-size: 22px; font-weight: 300; color: #3B3C51; line-height: 30px; padding-bottom: 15px; width: 100%; ">
+                                                                                    <div style="margin-right: 40px; "><span style="font-weight: 500; color: #00843D !important;">Dear Concern, &nbsp;</span><br />You Received new registration.</div>
+                                                                                </td>
+                                                                            </tr>
 
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
 
-                                                                                                                                <div style="font-family: inherit; text-align: inherit; font-size: 20px">Hello #Customer#</div>
-                                                                                                                    </tr>
-                                                                                                                </tbody>
-                                                                                                            </table>
-                                                                                                            <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="264ee24b-c2b0-457c-a9c1-d465879f9935">
-                                                                                                                <tbody>
-                                                                                                                    <tr>
-                                                                                                                        <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                                                                                                            <div style="font-family: inherit; text-align: inherit; font-size: 20px">Reset Password: #Password#</div>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </tbody>
-                                                                                                            </table>
-                                                                                                            <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="1995753e-0c64-4075-b4ad-321980b82dfe">
-                                                                                                                <tbody>
-                                                                                                                    <tr>
-                                                                                                                        <td style="padding:25px 0px 18px 0px; line-height:36px; text-align:inherit; color: #383838" height="100%" valign="top" bgcolor="" role="module-content">
-                                                                                                                            <div>
-                                                                                                                                <div style="font-family: inherit; text-align: inherit;padding-top: 0px;">
-                                                                                                                                    <span style="        color: #383838;
-        font-size: 25px;
-        font-family: inherit">Your password has been reset!</span>
-                                                                                                                                </div><div></div>
-                                                                                                                            </div>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </tbody>
-                                                                                                            </table>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
+                                            </tr>
 
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" border="0">
+                                        <tbody>
+                                            <tr>
+                                                <td><img width="580" src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/da8def19cbe0a588d2c4cf12b2db5f1272a3bc13/gradient_diagonal_cropped.png" style="display: block; height: 83px "></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table cellpadding="0" cellspacing="0" border="0" style="background-color: #F7F7F8; width: 100%; ">
+                                        <tbody>
+                                            <tr>
+                                                <td class="hard-td-spacer" style="width: 75px; ">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 75px; "></table>
+                                                </td>
+                                                <td style="width: 100%; ">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="soft-td-spacer" style="width: 15px; display: block; ">&nbsp;</td>
+                                                                <td>
+                                                                    <table cellpadding="0" cellspacing="0" border="0" style="font-family: &quot;-apple-system&quot; BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: 300; color: #3B3C51; ">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Namee: #CustomerName#</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Contact#: #CustomerContact#</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Registration Date: #RegistrationDate#</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Start Date:#EventStartDate#</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">End Date: #EventEndDate#</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Event Time: #EventTime#</td>
+                                                                            </tr>
 
-                                                                            <table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f7373f10-9ba4-4ca7-9a2e-1a2ba700deb9.1">
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td style="padding:20px 30px 0px 30px;" role="module-content" height="100%" valign="top" bgcolor="">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="3px" style="line-height:3px; font-size:3px;">
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <td style="padding:0px 0px 3px 0px;background-color: #383838"></td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-
-                                                                            <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
-                                                                                <tr>
-                                                                                    <td valign="middle" class="bg_light footer email-section">
-                                                                                        <table style="">
-                                                                                            <tr>
-                                                                                                <td valign="top" width="33.333%" style="padding-top: 20px;padding-left: 20px; padding-bottom: 10px">
-                                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                                                        <tr>
-                                                                                                            <td style="text-align: left; padding: 10px">
-                                                                                                                <p>Please note that we don’t send any invoices/ receipts of payments to any recipient, we will only send the invoice/ order confirmation to the sender/ order maker, and this is considered as a tax invoice and can be used for any official purpose. </p>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td valign="top" width="33.333%" style="padding-top: 20px;">
-                                                                                                    <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
-                                                                                                        <tr>
-                                                                                                            <td style="text-align: left;  padding: 10px;">
-                                                                                                                <h3 class="heading" style="margin-top: 0;">Contact Info</h3>
-                                                                                                                <ul>
-                                                                                                                    <li><a href="" style="color: black" class="text">Mamji Hospital</a></li>
-                                                                                                                    <li><a href="" style="color: black" class="text">(021) 111 166 177</a></li>
-                                                                                                                </ul>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr><!-- end: tr -->
-
-                                                                            </table>
-
-
-
-
-
-                                                                            <table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="e5cea269-a730-4c6b-8691-73d2709adc62">
-                                                                                <tbody>
-                                                                                    <tr>
-                                                                                        <td align="center" class="outer-td" style="padding:10px 0px 10px 0px;background: #cf2e2e;color: #f1f1f1;">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <td align="center" class="inner-td" style="" target="_blank"><a style="color:#ffffff;" href="">Mamji Hospital</a></td>
-                                                                                                    </tr>
-                                                                                                </tbody>
-                                                                                            </table>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                </tbody>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </center>
-
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="75px">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr class="line-row">
+                                                                                <td style="width: 100%; align: center; height: 1px; background: #e8ecee; "></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="25px">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="font-family: &quot;-apple-system&quot;, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 300; color: #9ca6af; text-align: left; line-height: 17px; " align="center" st-content="fulltext-content">If you have any query feel free to contact:<br><a style="color: #14aaf5; " href="#">example@gmail.com</a></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="25px">&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td class="hard-td-spacer" style="width: 60px; ">
+                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 60px; "></table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
 
 </body>
-</html>

@@ -73,6 +73,15 @@ namespace AKUH_API.Controllers
                 return StatusCode(500, $"Internet Connection Slow Error: {ex.Message}");
             }
         }
+
+        [HttpPost]
+        [Route("UploadScreenshot")]
+        
+        public async Task<int> UploadScreenshot([FromBody] AttendeesBLL obj)
+        {
+            return _eventRepo.UploadSS(obj, _hostingEnvironment);
+        }
+        
         [HttpPost]
         [Route("UpdateAttendees")]
 
@@ -126,8 +135,8 @@ namespace AKUH_API.Controllers
             string BodyEmailadmin = System.IO.File.ReadAllText(webRootPathA);
 
             BodyEmail = BodyEmail.Replace("#RegistrationDate#", data.Createdon.ToString());
-            BodyEmail = BodyEmail.Replace("#EventStartDate#", data.FromDate.ToString());
-            BodyEmail = BodyEmail.Replace("#EventEndDate#", data.ToDate.ToString());
+            BodyEmail = BodyEmail.Replace("#EventStartDate#", data.FromDate.ToString("dd-MM-yyyy"));
+            BodyEmail = BodyEmail.Replace("#EventEndDate#", data.ToDate.ToString("dd-MM-yyyy"));
             BodyEmail = BodyEmail.Replace("#EventTime#", data.EventTime.ToString());
             BodyEmail = BodyEmail.Replace("#CustomerName#", data.FullName.ToString());
 

@@ -35,13 +35,13 @@ namespace AKUH_API.Controllers
             var data = _loginRepo.LoginWithPasscode(passcode);
             return await data;
         }
-        [HttpGet]
-        [Route("Customerlogin/{username}/{password}/{type}/{fullname}")]
-        public async Task<RspLogin> loginCustomerSM(string username, string password, string type, string fullname)
-        {
-            var data = _loginRepo.loginCustomerSM(username, password, type, fullname);
-            return await data;
-        }
+        //[HttpGet]
+        //[Route("Customerlogin/{username}/{password}/{type}/{fullname}")]
+        //public async Task<RspLogin> loginCustomerSM(string username, string password, string type, string fullname)
+        //{
+        //    var data = _loginRepo.loginCustomerSM(username, password, type, fullname);
+        //    return await data;
+        //}
 
         [HttpPost]
         [Route("Customer/signup")]

@@ -15,7 +15,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AKUH_API.Repositories
 {
-    public class EventRepository
+    public class EventRepository :BaseRepository
     {
         
         public static DataTable _dt;
@@ -185,7 +185,10 @@ namespace AKUH_API.Repositories
                             FromDate = Convert.ToDateTime(j.FromDate).ToString("dd-MM-yyyy"),
                             Image = "http://akuapp-001-site2.mysitepanel.net/" + j.Image,                                                        
                             EventTime = j.EventTime,
-                            EventName = j.EventName,                            
+                            EventName = j.EventName,  
+                            MeetingLink = j.MeetingLink,
+                            Subject = j.Subject,
+                            MessageForAttendee  = j.MessageForAttendee
                             
                         });
 
@@ -276,7 +279,38 @@ namespace AKUH_API.Repositories
             }
             return result;
         }
+        public int UploadSS(AttendeesBLL? attendees, IWebHostEnvironment _env)
+        {
+            try
+            {
+                attendees.ImageSS = UploadImage(attendees.ImageSS, "Screenshot", _env);
+                
+                var result =  UpdateScreenShotData(attendees);
 
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+        }
+        public  int UpdateScreenShotData(AttendeesBLL? attendees)
+        {
+            int result = 0;
+            try
+            {
+                SqlParameter[] p = new SqlParameter[2];
+                p[0] = new SqlParameter("@UserID", attendees.UserID);
+                p[1] = new SqlParameter("@ImageSS", attendees.ImageSS);
+                
+                result =  (new DBHelper().ExecuteNonQueryReturn)("sp_UpdateAttendeesSS_API", p);
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            return result;
+        }
         public async Task<int> UpdateAttendees(AttendeesUpdtBLL? attendees)
         {
             int result = 0;

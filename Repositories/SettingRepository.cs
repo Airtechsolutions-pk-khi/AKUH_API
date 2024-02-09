@@ -24,6 +24,8 @@ namespace AKUH_API.Repositories
             var RspSetting = new RspSetting();
             var repo = new SettingBLL();
             List<FaqBLL> lstFaq = new List<FaqBLL>();
+            ChairBLL chair = new ChairBLL();
+            ConferenceChairBLL chairConf = new ConferenceChairBLL();
             try
             {
                 SqlParameter[] p = new SqlParameter[0];
@@ -53,7 +55,33 @@ namespace AKUH_API.Repositories
                         {
                             lstFaq = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_ds.Tables[1])).ToObject<List<FaqBLL>>().ToList();
                         }
+                        if (_ds.Tables[2] != null)
+                        {
+                            chair = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_ds.Tables[2])).ToObject<List<ChairBLL>>().FirstOrDefault();
+                            if (chair.ImgChair != null && chair.ImgChair != "")
+                            {
+                                chair.ImgChair = "http://akuapp-001-site2.mysitepanel.net/" + chair.ImgChair;
+                            }
+                            else
+                            {
+                                chair.ImgChair = "";
+                            }
+                        }
+                        if (_ds.Tables[3] != null)
+                        {
+                            chairConf = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_ds.Tables[3])).ToObject<List<ConferenceChairBLL>>().FirstOrDefault();
+                            if (chairConf.ImgConChair != null && chairConf.ImgConChair != "")
+                            {
+                                chairConf.ImgConChair = "http://akuapp-001-site2.mysitepanel.net/" + chairConf.ImgConChair;
+                            }
+                            else
+                            {
+                                chairConf.ImgConChair = "";
+                            }
+                        }
                         repo.faqs = lstFaq;
+                        repo.Chair = chair;
+                        repo.ChairConference = chairConf;
                     }
                     
 

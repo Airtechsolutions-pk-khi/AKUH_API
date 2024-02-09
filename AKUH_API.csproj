@@ -16,4 +16,8 @@
     <PackageReference Include="ZXing.Net" Version="0.16.9" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Img\Screenshot\" />
+  </ItemGroup>
+
 </Project>

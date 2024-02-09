@@ -260,7 +260,11 @@ namespace AKUH_API.Models
         public string Image { get; set; }
         public string FromDate { get; set; }
         public string EventTime { get; set; }
-       
+
+        public string MeetingLink { get; set; }
+        public string MessageForAttendee { get; set; }
+        public string Subject { get; set; }
+
     }
     public class EventAttendeesEmailBLL
     {
@@ -518,6 +522,21 @@ namespace AKUH_API.Models
 
         public DateTime? Updatedon { get; set; }
         public List<FaqBLL> faqs { get; set; }
+        public ChairBLL Chair { get; set; }
+        public ConferenceChairBLL ChairConference { get; set; }
+    }
+    public class ChairBLL
+    {
+        public string MsgChair { get; set; }
+         
+        public string ImgChair { get; set; }         
+    }
+    public class ConferenceChairBLL
+    {         
+        public string MsgConferenceChair { get; set; }
+         
+        public string ImgConChair { get; set; }
+
     }
     public class FaqBLL
     {
@@ -554,7 +573,8 @@ namespace AKUH_API.Models
         public string? Email { get; set; }
         public string? PhoneNo { get; set; }
         public string? Occupation { get; set; }
-
+        public string? ImageSS { get; set; }
+        
         public string? Gender { get; set; }
         public int? StatusID { get; set; }
         public DateTime? Createdon { get; set; } = DateTime.UtcNow.AddMinutes(300);
