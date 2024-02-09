@@ -5,9 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting.Internal;
 using System.Net.Mail;
 using System.Net;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace AKUH_API.Controllers
-{     
+{
     [ApiController]
     [Route("[Controller]")]
     public class LoginController : ControllerBase
@@ -25,7 +26,7 @@ namespace AKUH_API.Controllers
         [Route("CustomerLogin/{email}/{password}")]
         public async Task<RspLogin> loginCustomer(string email, string password)
         {
-            var data =  _loginRepo.GetCustomerInfo(email, password);
+            var data = _loginRepo.GetCustomerInfo(email, password);
             return await data;
         }
         [HttpGet]
@@ -45,7 +46,7 @@ namespace AKUH_API.Controllers
 
         [HttpPost]
         [Route("Customer/signup")]
-        
+
         public async Task<ActionResult<RspUser>> CustomerSignup(UserBLL user)
         {
             try
@@ -55,10 +56,10 @@ namespace AKUH_API.Controllers
                 if (result > 0)
                 {
                     // Assuming UserResponse has a UserId property, adjust accordingly
-                    RspUser userResponse = new RspUser { UserId = result , Status = "200", Description = "Customer Signup Successfully"};
+                    RspUser userResponse = new RspUser { UserId = result, Status = "200", Description = "Customer Signup Successfully" };
                     return Ok(userResponse);
                 }
-                
+
                 else
                 {
                     RspUser userResponse = new RspUser { UserId = 0, Status = "0", Description = "Already Exist." };
@@ -70,6 +71,7 @@ namespace AKUH_API.Controllers
                 return StatusCode(500, $"Internal Server Error: {ex.Message}");
             }
         }
+
         [HttpPost]
         [Route("Customer/edit")]
 
@@ -87,7 +89,7 @@ namespace AKUH_API.Controllers
                 }
                 else
                 {
-                    RspEditUser userResponse = new RspEditUser {  Status = "0", Description = "Failed to Edit user." };
+                    RspEditUser userResponse = new RspEditUser { Status = "0", Description = "Failed to Edit user." };
                     return BadRequest(userResponse);
                 }
             }
@@ -99,7 +101,6 @@ namespace AKUH_API.Controllers
 
         [HttpPost]
         [Route("Customertoken/insert")]
-
         public async Task<ActionResult<RspToken>> InsertToken(PushTokenBLL token)
         {
             try
@@ -107,8 +108,8 @@ namespace AKUH_API.Controllers
                 int result = await _loginRepo.InsertCustomerToken(token);
 
                 if (result > 0)
-                {                    
-                    RspToken tokenResponse = new RspToken {  status = 200, description = "Token Added Successfully" };
+                {
+                    RspToken tokenResponse = new RspToken { status = 200, description = "Token Added Successfully" };
                     return Ok(tokenResponse);
                 }
                 else
@@ -197,7 +198,78 @@ namespace AKUH_API.Controllers
             }
 
         }
-    }
 
-    
+        [HttpPost]
+        [Route("user/register")]
+        public async Task<ActionResult<RspAttendees>> AttendeeRegister(AttendeeRegsiterBLL obj)
+        {
+            try
+            {
+                int result = await _loginRepo.AttendeeRegister(obj);
+
+                if (result > 0)
+                {
+                    // Assuming UserResponse has a UserId property, adjust accordingly
+                    RspUser userResponse = new RspUser { UserId = result, Status = "200", Description = "User Registered Successfully" };
+                    SendEmailtoAdmin(obj);
+                    return Ok(userResponse);
+                }
+
+                else
+                {
+                    RspUser userResponse = new RspUser { UserId = 0, Status = "0", Description = "Already Exist." };
+                    return BadRequest(userResponse);
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal Server Error: {ex.Message}");
+            }
+        }
+        [HttpPost]
+        [Route("adminEmail")]
+        public void SendEmailtoAdmin(AttendeeRegsiterBLL obj)
+        {
+            string ToEmail, SubJect, cc, Bcc;
+            SubJect = "You Received New Registration";
+            string mobile = obj.ContactNo;
+            DateTime dt = DateTime.UtcNow.AddMinutes(300);
+            string items = "";
+
+            string webRootPathA = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "userRegistered.txt");
+            string BodyEmailadmin = System.IO.File.ReadAllText(webRootPathA);
+
+            //Admin
+            BodyEmailadmin = BodyEmailadmin.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
+            BodyEmailadmin = BodyEmailadmin.Replace("#CustomerContact#", obj.ContactNo.ToString());
+            BodyEmailadmin = BodyEmailadmin.Replace("#CustomerName#", obj.UserName.ToString());
+
+            cc = "";
+            Bcc = "akuhevents@gmail.com";
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.To.Add("akuhevents@gmail.com");
+                mail.From = new MailAddress("akuhevents@gmail.com");
+                mail.Subject = SubJect;
+                string Body = BodyEmailadmin;
+                mail.Body = Body;
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient())
+                {
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Port = 587;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "ueuzxvrsgtaxdbev");
+                    smtp.Send(mail);
+                }
+
+            }
+            catch (Exception)
+            {
+            }
+        }
+    }
 }
