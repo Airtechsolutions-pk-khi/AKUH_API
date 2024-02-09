@@ -27,7 +27,7 @@ namespace AKUH_API.Repositories
         public async Task<RspLogin> GetCustomerInfo(string email, string password)
         {
             var RspLogin = new RspLogin();
-            var repo = new UserBLL();
+            var repo = new EventAttendeesBLL();
             try
             {
                 SqlParameter[] p = new SqlParameter[2];
@@ -39,7 +39,7 @@ namespace AKUH_API.Repositories
 
                 if (_dt.Rows.Count > 0)
                 {
-                    repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<UserBLL>>().FirstOrDefault();
+                    repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<EventAttendeesBLL>>().FirstOrDefault();
 
                     RspLogin rspLogin = new RspLogin()
                     {
@@ -118,67 +118,67 @@ namespace AKUH_API.Repositories
             }
         }
 
-        public async Task<RspLogin> loginCustomerSM(string username, string password, string type, string fullname)
-        {
-            var rspLogin = new RspLogin();
-            var repo = new UserBLL();
-            try
-            {
-                if (type == "sm")
-                {
-                    SqlParameter[] pp = new SqlParameter[1];
-                    pp[0] = new SqlParameter("@Email", username);
-                    _dt = (new DBHelper().GetTableFromSP)("sp_CheckCustomerByEmail_API", pp);
+        //public async Task<RspLogin> loginCustomerSM(string username, string password, string type, string fullname)
+        //{
+        //    var rspLogin = new RspLogin();
+        //    var repo = new UserBLL();
+        //    try
+        //    {
+        //        if (type == "sm")
+        //        {
+        //            SqlParameter[] pp = new SqlParameter[1];
+        //            pp[0] = new SqlParameter("@Email", username);
+        //            _dt = (new DBHelper().GetTableFromSP)("sp_CheckCustomerByEmail_API", pp);
 
-                    if (_dt.Rows.Count == 0)
-                    {
-                        SqlParameter[] p1 = new SqlParameter[5];
-                        p1[0] = new SqlParameter("@UserName", username);
-                        p1[1] = new SqlParameter("@Email", username);
-                        p1[2] = new SqlParameter("@Password", "social");
-                        p1[3] = new SqlParameter("@StatusID", 1);
-                        p1[4] = new SqlParameter("@CreatedDate", DateTime.UtcNow.AddMinutes(300));
+        //            if (_dt.Rows.Count == 0)
+        //            {
+        //                SqlParameter[] p1 = new SqlParameter[5];
+        //                p1[0] = new SqlParameter("@UserName", username);
+        //                p1[1] = new SqlParameter("@Email", username);
+        //                p1[2] = new SqlParameter("@Password", "social");
+        //                p1[3] = new SqlParameter("@StatusID", 1);
+        //                p1[4] = new SqlParameter("@CreatedDate", DateTime.UtcNow.AddMinutes(300));
 
-                        _dt = await (new DBHelper().GetTableFromSPAsync)("sp_CustomerSignupSM_API", p1);
+        //                _dt = await (new DBHelper().GetTableFromSPAsync)("sp_CustomerSignupSM_API", p1);
 
-                        repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<UserBLL>>().FirstOrDefault();
+        //                repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<UserBLL>>().FirstOrDefault();
 
-                        rspLogin = new RspLogin()
-                        {
-                            description = "Login Success.",
-                            status = 200,
-                            login = repo
-                        };
-                        return rspLogin;
-                    }
-                    else
-                    {
+        //                rspLogin = new RspLogin()
+        //                {
+        //                    description = "Login Success.",
+        //                    status = 200,
+        //                    login = repo
+        //                };
+        //                return rspLogin;
+        //            }
+        //            else
+        //            {
                         
-                        int userid = repo.UserID = Convert.ToInt32(_dt.Rows[0][0]);
-                        rspLogin = new RspLogin()
-                        {
-                            description = "Login Success.",
-                            status =200,
-                            login = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<UserBLL>>().FirstOrDefault(),
+        //                int userid = repo.UserID = Convert.ToInt32(_dt.Rows[0][0]);
+        //                rspLogin = new RspLogin()
+        //                {
+        //                    description = "Login Success.",
+        //                    status =200,
+        //                    login = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<UserBLL>>().FirstOrDefault(),
                             
-                        };
-                        return rspLogin;
-                    }
-                }
-                return rspLogin;
-            }
+        //                };
+        //                return rspLogin;
+        //            }
+        //        }
+        //        return rspLogin;
+        //    }
 
-            catch (Exception ex)
-            {
-                rspLogin = new RspLogin()
-                {
-                    description = "Incorrect Email or Password.",
-                    status = 0,
-                    login = null
-                };
-                return rspLogin;
-            }
-        }
+        //    catch (Exception ex)
+        //    {
+        //        rspLogin = new RspLogin()
+        //        {
+        //            description = "Incorrect Email or Password.",
+        //            status = 0,
+        //            login = null
+        //        };
+        //        return rspLogin;
+        //    }
+        //}
         public async Task<int> AttendeeRegister(AttendeeRegsiterBLL obj)
         {
             int result = 0;

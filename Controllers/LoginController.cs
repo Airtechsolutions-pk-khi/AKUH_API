@@ -44,33 +44,33 @@ namespace AKUH_API.Controllers
         //    return await data;
         //}
 
-        [HttpPost]
-        [Route("Customer/signup")]
+        //[HttpPost]
+        //[Route("Customer/signup")]
 
-        public async Task<ActionResult<RspUser>> CustomerSignup(UserBLL user)
-        {
-            try
-            {
-                int result = await _loginRepo.CustomerSignup(user);
+        //public async Task<ActionResult<RspUser>> CustomerSignup(UserBLL user)
+        //{
+        //    try
+        //    {
+        //        int result = await _loginRepo.CustomerSignup(user);
 
-                if (result > 0)
-                {
-                    // Assuming UserResponse has a UserId property, adjust accordingly
-                    RspUser userResponse = new RspUser { UserId = result, Status = "200", Description = "Customer Signup Successfully" };
-                    return Ok(userResponse);
-                }
+        //        if (result > 0)
+        //        {
+        //            // Assuming UserResponse has a UserId property, adjust accordingly
+        //            RspUser userResponse = new RspUser { UserId = result, Status = "200", Description = "Customer Signup Successfully" };
+        //            return Ok(userResponse);
+        //        }
 
-                else
-                {
-                    RspUser userResponse = new RspUser { UserId = 0, Status = "0", Description = "Already Exist." };
-                    return BadRequest(userResponse);
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal Server Error: {ex.Message}");
-            }
-        }
+        //        else
+        //        {
+        //            RspUser userResponse = new RspUser { UserId = 0, Status = "0", Description = "Already Exist." };
+        //            return BadRequest(userResponse);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"Internal Server Error: {ex.Message}");
+        //    }
+        //}
 
         [HttpPost]
         [Route("Customer/edit")]

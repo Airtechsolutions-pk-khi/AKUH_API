@@ -40,7 +40,7 @@ namespace AKUH_API.Models
     }
     public class RspLogin
     {
-        public UserBLL? login { get; set; }
+        public EventAttendeesBLL? login { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
 
@@ -303,14 +303,15 @@ namespace AKUH_API.Models
     {
         public int AttendeesID { get; set; }
 
-        public int? EventID { get; set; }
+        //public int? EventID { get; set; }
 
         public string FullName { get; set; }
 
         public string Email { get; set; }
 
         public string PhoneNo { get; set; }
-
+        public string MeetingLink { get; set; }
+        public string MessageForAttendee { get; set; }
         public int? StatusID { get; set; }
 
         public DateTime? Createdon { get; set; }
