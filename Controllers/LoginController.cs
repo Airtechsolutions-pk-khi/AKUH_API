@@ -236,8 +236,16 @@ namespace AKUH_API.Controllers
             DateTime dt = DateTime.UtcNow.AddMinutes(300);
             string items = "";
 
-            string webRootPathA = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "userRegistered.txt");
-            string BodyEmailadmin = System.IO.File.ReadAllText(webRootPathA);
+            string webRootPathA = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "custEmail.txt");
+            string BodyEmail = System.IO.File.ReadAllText(webRootPathA);
+
+            //Customer
+            BodyEmail = BodyEmail.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
+            BodyEmail = BodyEmail.Replace("#CustomerContact#", obj.ContactNo.ToString());
+            BodyEmail = BodyEmail.Replace("#CustomerName#", obj.UserName.ToString());
+
+            string webRootPathB = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "userRegistered.txt");
+            string BodyEmailadmin = System.IO.File.ReadAllText(webRootPathB);
 
             //Admin
             BodyEmailadmin = BodyEmailadmin.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
@@ -246,6 +254,31 @@ namespace AKUH_API.Controllers
 
             cc = "";
             Bcc = "akuhevents@gmail.com";
+
+            try
+            {
+                MailMessage mail = new MailMessage();
+                mail.To.Add(obj.Email);
+                mail.From = new MailAddress("akuhevents@gmail.com");
+                mail.Subject = "Make Payment to Get Approved";
+                string Body = BodyEmail;
+                mail.Body = Body;
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient())
+                {
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Port = 587;
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "ueuzxvrsgtaxdbev");
+                    smtp.Send(mail);
+                }
+
+            }
+            catch (Exception)
+            {
+            }
             try
             {
                 MailMessage mail = new MailMessage();

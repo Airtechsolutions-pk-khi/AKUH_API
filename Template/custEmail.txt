@@ -227,15 +227,6 @@
                                                                             <tr>
                                                                                 <td colspan="2" style="font-size: 18px; padding-bottom: 5px; ">Registration Date: #RegistrationDate#</td>
                                                                             </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 18px; padding-bottom: 5px; ">Start Date:#EventStartDate#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 18px; padding-bottom: 5px; ">End Date: #EventEndDate#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size:  18px; ">Event Time: #EventTime#</td>
-                                                                            </tr>
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
