@@ -33,30 +33,31 @@ namespace AKUH_API.Repositories
                 SqlParameter[] p = new SqlParameter[2];
                 p[0] = new SqlParameter("@email", email);
                 p[1] = new SqlParameter("@password", password);
-
-                // Assuming GetDatasetFromSP is an asynchronous method
+                
                 _dt = await (new DBHelper().GetTableFromSPAsync)("sp_AuthenticateUser_admin", p);
 
                 if (_dt.Rows.Count > 0)
                 {
                     repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<EventAttendeesBLL>>().FirstOrDefault();
-
-                    RspLogin rspLogin = new RspLogin()
-                    {
-                        description = "Login Success.",
-                        status = 200,
-                        login = repo
-                    };
-                    return rspLogin;
+                     
+                        RspLogin rspLogin = new RspLogin()
+                        {
+                            description = "Login Success.",
+                            status = 200,
+                            login = repo
+                        };
+                        return rspLogin;
+                      
                 }
                 else
                 {
                     RspLogin rspLogin = new RspLogin()
                     {
-                        description = "Incorrect Email or Password.",
-                        status = 0,
-                        login = null
+                        description = "Your Email is Not Approved Yet.",
+                        status = 200,
+                        login = repo
                     };
+                    return rspLogin;
                     return rspLogin;
                 }
             }
