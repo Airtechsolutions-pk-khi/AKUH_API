@@ -484,11 +484,62 @@ namespace AKUH_API.Models
         public string? description { get; set; }
         public int? status { get; set; }
     }
+    public class RspWorkshop
+    {
+        public List<WorkshopBLL> workshop { get; set; }
+        public string? description { get; set; }
+        public int? status { get; set; }
+    }
+    public class WorkshopBLL
+    {
+        public int? WorkshopID { get; set; }
+        public string? OrganizerName { get; set; }
+
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public DateTime Date { get; set; }
+        public string? Image { get; set; }
+        public string? StartTime { get; set; }
+        public string? EndTime { get; set; }
+        public string? PdfLink { get; set; }
+
+        public int? StatusID { get; set; }
+
+        public DateTime? Createdon { get; set; }
+
+        public DateTime? Updatedon { get; set; }
+        public int? Updatedby { get; set; }
+
+    }
+    public class RspOrganisingCommittee
+    {
+        public List<OrganisingCommitteeBLL> OrganisingCommittee { get; set; }
+        public string? description { get; set; }
+        public int? status { get; set; }
+    }
+
     public class RspMsg
     {
         public List<MessageBLL> message { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
+    }
+    public class OrganisingCommitteeBLL
+    {
+        public int? ID { get; set; }
+        public string? Name { get; set; }
+
+        public string? Designation { get; set; }
+
+        public string? Image { get; set; }
+        
+        public int? StatusID { get; set; }
+
+        public DateTime? Createdon { get; set; }
+
+        public DateTime? Updatedon { get; set; }
+        public int? Updatedby { get; set; }
+
     }
     public class MessageBLL
     {
