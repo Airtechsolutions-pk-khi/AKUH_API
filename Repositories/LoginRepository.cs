@@ -192,8 +192,8 @@ namespace AKUH_API.Repositories
                 {
                     SqlParameter[] p = new SqlParameter[6];
                     p[0] = new SqlParameter("@Email", obj.Email);
-                    p[1] = new SqlParameter("@UserName", obj.UserName);
-                    p[2] = new SqlParameter("@Phone", obj.ContactNo);
+                    p[1] = new SqlParameter("@UserName", obj.FullName);
+                    p[2] = new SqlParameter("@Phone", obj.PhoneNo);
                     p[3] = new SqlParameter("@StatusID", 101);
                     p[4] = new SqlParameter("@CreatedDate", DateTime.UtcNow.AddMinutes(300));
                     p[5] = new SqlParameter("@UpdatedBy", 1);
@@ -223,11 +223,11 @@ namespace AKUH_API.Repositories
                 if (_dt.Rows.Count == 0)
                 {
                     SqlParameter[] p = new SqlParameter[9];
-                    p[0] = new SqlParameter("@UserName", user.UserName);
+                    p[0] = new SqlParameter("@UserName", user.FullName);
                     p[1] = new SqlParameter("@Email", user.Email);
                     p[2] = new SqlParameter("@Image", user.Image);
                     p[3] = new SqlParameter("@Address", user.Address);
-                    p[4] = new SqlParameter("@ContactNo", user.ContactNo);
+                    p[4] = new SqlParameter("@ContactNo", user.PhoneNo);
                     p[5] = new SqlParameter("@Password", user.Password);
                     p[6] = new SqlParameter("@StatusID", 1);
                     p[7] = new SqlParameter("@CreatedDate", DateTime.UtcNow.AddMinutes(300));
@@ -253,14 +253,13 @@ namespace AKUH_API.Repositories
             int result = 0;
             try
             {
-                SqlParameter[] p = new SqlParameter[7];
-                p[0] = new SqlParameter("@UserName", user.UserName);
-                p[1] = new SqlParameter("@Email", user.Email);
-                p[2] = new SqlParameter("@ContactNo", user.ContactNo);
-                p[3] = new SqlParameter("@Password", user.Password);
-                p[4] = new SqlParameter("@UpdatedDate", DateTime.UtcNow.AddMinutes(300));
-                p[5] = new SqlParameter("@UpdatedBy", 1);
-                p[6] = new SqlParameter("@UserID", user.UserID);
+                SqlParameter[] p = new SqlParameter[4];
+                p[0] = new SqlParameter("@FullName", user.FullName);                
+                p[1] = new SqlParameter("@ContactNo", user.PhoneNo);
+               
+                p[2] = new SqlParameter("@Updatedon", DateTime.UtcNow.AddMinutes(300));
+                
+                p[3] = new SqlParameter("@UserID", user.AttendeesID);
 
 
                 //result = Convert.ToInt32(new DBHelper().GetTableFromSP("sp_CustomerEdit_API", p).Rows[0]["UserID"]);
@@ -409,7 +408,7 @@ namespace AKUH_API.Repositories
             try
             {
                 var data = GetUserFromEmail(email);
-                if (data.UserID != null)
+                if (data.AttendeesID != null)
                 {
                     Random random = new Random();
                     string Password = random.Next(10000000, 99999999).ToString();

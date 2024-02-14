@@ -125,10 +125,10 @@ namespace AKUH_API.Controllers
         }
 
         [HttpGet]
-        [Route("GetUser/{UserID}")]
-        public RspCustomerLogin Customerlogin(int UserID)
+        [Route("GetUser/{AttendeesID}")]
+        public RspCustomerLogin Customerlogin(int AttendeesID)
         {
-            return _loginRepo.GetUserbyID(UserID);
+            return _loginRepo.GetUserbyID(AttendeesID);
         }
 
         [HttpGet]
@@ -232,7 +232,7 @@ namespace AKUH_API.Controllers
         {
             string ToEmail, SubJect, cc, Bcc;
             SubJect = "You Received New Registration";
-            string mobile = obj.ContactNo;
+            string mobile = obj.PhoneNo;
             DateTime dt = DateTime.UtcNow.AddMinutes(300);
             string items = "";
 
@@ -241,16 +241,16 @@ namespace AKUH_API.Controllers
 
             //Customer
             BodyEmail = BodyEmail.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
-            BodyEmail = BodyEmail.Replace("#CustomerContact#", obj.ContactNo.ToString());
-            BodyEmail = BodyEmail.Replace("#CustomerName#", obj.UserName.ToString());
+            BodyEmail = BodyEmail.Replace("#CustomerContact#", obj.PhoneNo.ToString());
+            BodyEmail = BodyEmail.Replace("#CustomerName#", obj.PhoneNo.ToString());
 
             string webRootPathB = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "userRegistered.txt");
             string BodyEmailadmin = System.IO.File.ReadAllText(webRootPathB);
 
             //Admin
             BodyEmailadmin = BodyEmailadmin.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
-            BodyEmailadmin = BodyEmailadmin.Replace("#CustomerContact#", obj.ContactNo.ToString());
-            BodyEmailadmin = BodyEmailadmin.Replace("#CustomerName#", obj.UserName.ToString());
+            BodyEmailadmin = BodyEmailadmin.Replace("#CustomerContact#", obj.PhoneNo.ToString());
+            BodyEmailadmin = BodyEmailadmin.Replace("#CustomerName#", obj.FullName.ToString());
 
             cc = "";
             Bcc = "akuhevents@gmail.com";

@@ -105,6 +105,8 @@ namespace AKUH_API.Repositories
                             EventTime = j.EventTime,
                             EventCity = j.EventCity,
                             LocationLink = j.LocationLink,
+                            Location = j.Location,
+                            EventEndTime = j.EventEndTime,
                             PhoneNo = j.PhoneNo,
                             Email = j.Email,
                             RemainingTicket = j.RemainingTicket,
@@ -113,6 +115,7 @@ namespace AKUH_API.Repositories
                             IsFeatured = j.IsFeatured,
                             Createdon = j.Createdon,
                             Updatedon = j.Updatedon,
+                            EventLink = j.EventLink,
                             Speakers = lstSpeaker,
                             Organizers = lstOrganizer,
                             ImgList = lstImg
@@ -178,6 +181,7 @@ namespace AKUH_API.Repositories
                         {
                             EventID = j.EventID,
                             UserID = j.UserID,
+                            AttendeesID = j.AttendeesID,
                             StatusID = j.StatusID,
                             FullName = j.FullName,
                             Email = j.Email,
@@ -304,6 +308,11 @@ namespace AKUH_API.Repositories
                 p[1] = new SqlParameter("@ImageSS", attendees.ImageSS);
                 
                 result =  (new DBHelper().ExecuteNonQueryReturn)("sp_UpdateAttendeesSS_API", p);
+                result = Convert.ToInt32(new DBHelper().GetTableFromSP("sp_UpdateAttendeesSS_API", p).Rows[0]["AttendeesID"]);
+                if (result > 0)
+                {
+                    return 2;
+                }
             }
             catch (Exception ex)
             {
@@ -316,15 +325,41 @@ namespace AKUH_API.Repositories
             int result = 0;
             try
             {
-                SqlParameter[] p = new SqlParameter[5];
-                p[0] = new SqlParameter("@EventID", attendees.EventID);
-                p[1] = new SqlParameter("@UserID", attendees.UserID);
-                p[2] = new SqlParameter("@FullName", attendees.FullName);
-                p[3] = new SqlParameter("@Email", attendees.Email);                 
-                p[4] = new SqlParameter("@Updatedon", DateTime.UtcNow.AddMinutes(300));
-                 
-                //result = Convert.ToInt32(new DBHelper().ExecuteNonQueryReturnAsync("sp_UpdateAttendees_API", p));
-                result = await (new DBHelper().ExecuteNonQueryReturnAsync)("sp_UpdateAttendees_API", p);
+                if (attendees.AttendeesID != null || attendees.AttendeesID == 0)
+                {
+                    SqlParameter[] p1 = new SqlParameter[1];
+                    p1[0] = new SqlParameter("@AttendeesID", attendees.AttendeesID);
+                    DataTable resultTable = new DBHelper().GetTableFromSP("sp_ChkAttendees_API", p1);
+
+                    if (resultTable.Rows.Count > 0)
+                    {
+                        return 2;
+                    }
+                    else
+                    {
+                        SqlParameter[] p = new SqlParameter[4];
+
+                        p[0] = new SqlParameter("@FullName", attendees.FullName);
+                        p[1] = new SqlParameter("@Email", attendees.Email);
+                        p[2] = new SqlParameter("@AttendeesID", attendees.AttendeesID);
+                        p[3] = new SqlParameter("@Updatedon", DateTime.UtcNow.AddMinutes(300));
+
+                        result = await (new DBHelper().ExecuteNonQueryReturnAsync)("sp_UpdateAttendees_API", p);
+                        
+                    }
+
+                }
+                //if (attendees.AttendeesID != null || attendees.AttendeesID == 0)
+                //{
+                //    SqlParameter[] p = new SqlParameter[4];
+
+                //    p[0] = new SqlParameter("@FullName", attendees.FullName);
+                //    p[1] = new SqlParameter("@Email", attendees.Email);
+                //    p[2] = new SqlParameter("@AttendeesID", attendees.AttendeesID);
+                //    p[3] = new SqlParameter("@Updatedon", DateTime.UtcNow.AddMinutes(300));
+
+                //    result = await (new DBHelper().ExecuteNonQueryReturnAsync)("sp_UpdateAttendees_API", p);
+                //}
             }
             catch (Exception ex)
             {

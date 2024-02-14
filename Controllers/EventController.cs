@@ -92,20 +92,27 @@ namespace AKUH_API.Controllers
             {
                 int result = await _eventRepo.UpdateAttendees(attendees);
 
-                if (result > 0)
+                if (result == 1)
                 {
                     rspAttendees.attendees = attendees;
-                    //rspAttendees.attendees.AttendeesID = result;
-                    rspAttendees.attendees.StatusID = 1;
+                    //rspAttendees.attendees.AttendeesID = result;                    
                     rspAttendees.status = 200;
-                    rspAttendees.description = "Participant is Present.";
+                    rspAttendees.description = "Attendee is Present.";
+                    return Ok(rspAttendees);
+                }
+                if (result == 2)
+                {
+                    rspAttendees.attendees = attendees;
+                    //rspAttendees.attendees.AttendeesID = result;                    
+                    rspAttendees.status = 200;
+                    rspAttendees.description = "Attendee is already Present.";
                     return Ok(rspAttendees);
                 }
                 else
                 {
                     rspAttendees.attendees = attendees;
                     rspAttendees.status = 0;
-                    rspAttendees.description = "Participant is not Present.";
+                    rspAttendees.description = "Something Went Wrong.";
                     return BadRequest(rspAttendees);
                 }
             }

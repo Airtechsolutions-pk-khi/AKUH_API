@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http.HttpResults;
 using Newtonsoft.Json.Linq;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using WebAPICode.Helpers;
 
 namespace AKUH_API.Repositories
@@ -32,6 +33,18 @@ namespace AKUH_API.Repositories
                 if (_dt.Rows.Count > 0)
                 {
                     repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<WorkshopBLL>>().ToList();
+
+                    foreach (var item in repo)
+                    {
+
+                        DateTime startDate = item.Date;
+                        
+                        var a = startDate.ToString("dd-MM-yyyy");
+                        
+                        item.FinalDate = a ;
+                    }
+
+
                     foreach (var item in repo)
                     {
                         if (item.Image != null && item.Image != "")

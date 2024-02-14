@@ -90,16 +90,16 @@ namespace AKUH_API.Models
     }
     public class UserBLL
     {
-        public int UserID { get; set; }
+        public int AttendeesID { get; set; }
 
-        public string? UserName { get; set; }
+        public string? FullName { get; set; }
 
         public string? Email { get; set; }
         public string? Image { get; set; }
 
         public string? Address { get; set; }
 
-        public string? ContactNo { get; set; }
+        public string? PhoneNo { get; set; }
 
         public string? Password { get; set; }
 
@@ -185,6 +185,8 @@ namespace AKUH_API.Models
         public string Type { get; set; }
 
         public string Description { get; set; }
+        public string EventLink { get; set; }
+        
         public bool IsFeatured { get; set; }
 
         public string Location { get; set; }
@@ -202,6 +204,7 @@ namespace AKUH_API.Models
         public string EventDate { get; set; }
 
         public string? EventTime { get; set; }
+        public string? EventEndTime { get; set; }
         public string? EventCity { get; set; }
 
         public string LocationLink { get; set; }
@@ -250,20 +253,21 @@ namespace AKUH_API.Models
     }
     public class MyEventBLL
     {
-        public int EventID { get; set; }
-        public int UserID { get; set; }
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public string PhoneNo { get; set; }
-        public int StatusID { get; set; }
-        public string EventName { get; set; }
-        public string Image { get; set; }
-        public string FromDate { get; set; }
-        public string EventTime { get; set; }
+        public int? EventID { get; set; }
+        public int? AttendeesID { get; set; }
+        public int? UserID { get; set; }
+        public string? FullName { get; set; }
+        public string? Email { get; set; }
+        public string? PhoneNo { get; set; }
+        public int? StatusID { get; set; }
+        public string? EventName { get; set; }
+        public string? Image { get; set; }
+        public string? FromDate { get; set; }
+        public string? EventTime { get; set; }
 
-        public string MeetingLink { get; set; }
-        public string MessageForAttendee { get; set; }
-        public string Subject { get; set; }
+        public string? MeetingLink { get; set; }
+        public string? MessageForAttendee { get; set; }
+        public string? Subject { get; set; }
 
     }
     public class EventAttendeesEmailBLL
@@ -324,13 +328,11 @@ namespace AKUH_API.Models
 
     public class AttendeeRegsiterBLL
     {
-        public int UserID { get; set; }
-        public string? UserName { get; set; }
+        public int AttendeesID { get; set; }
+        public string? FullName { get; set; }
         public string? Email { get; set; }
-        public string? Image { get; set; }
-        public string? Address { get; set; }
-        public string? ContactNo { get; set; }
-        public string? Password { get; set; }
+        public string? Password { get; set; }        
+        public string? PhoneNo { get; set; }        
         public int? StatusID { get; set; }
         public DateTime? CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
@@ -496,8 +498,10 @@ namespace AKUH_API.Models
         public string? OrganizerName { get; set; }
 
         public string? Name { get; set; }
+        public string? Link { get; set; }
         public string? Description { get; set; }
         public DateTime Date { get; set; }
+        public string? FinalDate { get; set; }
         public string? Image { get; set; }
         public string? StartTime { get; set; }
         public string? EndTime { get; set; }
@@ -643,11 +647,8 @@ namespace AKUH_API.Models
 
     }
     public class AttendeesUpdtBLL
-    {
-        public int? EventID { get; set; }
-
-        public int? UserID { get; set; }
-
+    {         
+        public int? AttendeesID { get; set; }         
         public string? FullName { get; set; }
         public string? Email { get; set; }
         public int? StatusID { get; set; }
