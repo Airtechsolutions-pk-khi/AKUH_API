@@ -112,14 +112,14 @@ namespace AKUH_API.Models
         public int? UpdatedBy { get; set; }
 
     }
-    public class RspBannerPopup
+    public class RspPopup 
     {
-        public List<BannerPopupBLL> bannerPopup { get; set; }
+        public List<PopupBLL> popup { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
 
     }
-    public class BannerPopupBLL
+    public class PopupBLL
     {
         public int? ID { get; set; }
 
@@ -134,8 +134,6 @@ namespace AKUH_API.Models
         public DateTime? Createdon { get; set; }
 
         public DateTime? Updatedon { get; set; }
-
-        public int? UpdatedBy { get; set; }
 
     }
     public class RspBanner
@@ -486,6 +484,7 @@ namespace AKUH_API.Models
         public string? description { get; set; }
         public int? status { get; set; }
     }
+    
     public class RspWorkshop
     {
         public List<WorkshopBLL> workshop { get; set; }
@@ -563,6 +562,7 @@ namespace AKUH_API.Models
         public DateTime? Updatedon { get; set; }
  
     }
+   
     public class SpeakerBLL
     {
         public int? EventID { get; set; }
@@ -617,6 +617,7 @@ namespace AKUH_API.Models
 
         public DateTime? Updatedon { get; set; }
         public List<FaqBLL> faqs { get; set; }
+        public List<PopupBLL> popup { get; set; }
         public ChairBLL Chair { get; set; }
         public ConferenceChairBLL ChairConference { get; set; }
     }

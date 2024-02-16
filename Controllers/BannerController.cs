@@ -23,12 +23,6 @@ namespace AKUH_API.Controllers
             var data = _bannerRepo.GetAllBanner();
             return await data;
         }
-        [HttpGet]
-        [Route("BannerPopup")]
-        public async Task<RspBannerPopup> BannerPopup()
-        {
-            var data = _bannerRepo.BannerPopup();
-            return await data;
-        }
+        
     }
-}
+} 

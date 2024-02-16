@@ -24,6 +24,7 @@ namespace AKUH_API.Repositories
             var RspSetting = new RspSetting();
             var repo = new SettingBLL();
             List<FaqBLL> lstFaq = new List<FaqBLL>();
+            List<PopupBLL> lstPopup = new List<PopupBLL>();
             ChairBLL chair = new ChairBLL();
             ConferenceChairBLL chairConf = new ConferenceChairBLL();
             try
@@ -79,7 +80,26 @@ namespace AKUH_API.Repositories
                                 chairConf.ImgConChair = "";
                             }
                         }
+                        if (_ds.Tables[4] != null)
+                        {
+                            lstPopup = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_ds.Tables[4])).ToObject<List<PopupBLL>>().ToList();
+
+                            foreach (var item in lstPopup)
+                            {
+                                if (item.Image != null && item.Image != "")
+                                {
+                                    item.Image = "http://akuapp-001-site2.mysitepanel.net/" + item.Image;
+                                }
+                                else
+                                {
+                                    item.Image = "";
+                                }
+                            }
+
+                           
+                        }
                         repo.faqs = lstFaq;
+                        repo.popup = lstPopup;
                         repo.Chair = chair;
                         repo.ChairConference = chairConf;
                     }

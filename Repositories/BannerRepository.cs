@@ -83,66 +83,7 @@ namespace AKUH_API.Repositories
             }
         }
 
-        public async Task<RspBannerPopup> BannerPopup()
-        {
-
-            var RspBannerPopup = new RspBannerPopup();
-            var repo = new List<BannerPopupBLL>();
-            try
-            {
-                SqlParameter[] p = new SqlParameter[0];
-
-                _dt = await (new DBHelper().GetTableFromSPAsync)("sp_GetAllBannerPopup_API", p);
-
-                if (_dt.Rows.Count > 0)
-                {
-                    repo = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<BannerPopupBLL>>().ToList();
-
-                    foreach (var item in repo)
-                    {
-                        if (item.Image != null && item.Image != "")
-                        {
-                            item.Image = "http://akuapp-001-site2.mysitepanel.net/" + item.Image;
-                        }
-                        else
-                        {
-                            item.Image = "";
-
-                        }
-                    }
-
-
-
-                    RspBannerPopup rspBannerPopup = new RspBannerPopup()
-                    {
-                        description = "Success.",
-                        status = 200,
-                        bannerPopup = repo
-                    };
-                    return rspBannerPopup;
-                }
-                else
-                {
-                    RspBannerPopup rspBannerPopup = new RspBannerPopup()
-                    {
-                        description = "Banners not found.",
-                        status = 0,
-                        bannerPopup = null
-                    };
-                    return rspBannerPopup;
-                }
-            }
-            catch (Exception ex)
-            {
-                RspBannerPopup rspBannerPopup = new RspBannerPopup()
-                {
-                    description = "Something went wrong.",
-                    status = 0,
-                    bannerPopup = null
-                };
-                return rspBannerPopup;
-            }
-        }
+        
     }
     
     
