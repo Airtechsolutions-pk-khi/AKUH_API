@@ -218,7 +218,7 @@ namespace AKUH_API.Controllers
                 else
                 {
                     RspUser userResponse = new RspUser { UserId = 0, Status = "0", Description = "Already Exist." };
-                    return BadRequest(userResponse);
+                    return Ok(userResponse);
                 }
             }
             catch (Exception ex)
