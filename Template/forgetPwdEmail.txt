@@ -163,6 +163,7 @@
                                                                                                                 <tbody>
                                                                                                                     <tr>
                                                                                                                         <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                                                                                                                        <div style="font-family: inherit; text-align: inherit; font-size: 20px">Your Email is: #Email#</div>
                                                                                                                             <div style="font-family: inherit; text-align: inherit; font-size: 20px">Your new password is: #Password#</div>
                                                                                                                         </td>
                                                                                                                     </tr>

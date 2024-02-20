@@ -147,6 +147,7 @@ namespace AKUH_API.Controllers
             {
                 SendEmailtoCust(result.Password, email);
             }
+            
             return result;
 
         }
@@ -154,18 +155,14 @@ namespace AKUH_API.Controllers
         [Route("sendEmail")]
         public void SendEmailtoCust(string Password, string Email)
         {
-
             string ToEmail, SubJect, cc, Bcc;
-            ToEmail = Email;
             SubJect = "Password Updated";
-
-            DateTime dt = DateTime.UtcNow.AddMinutes(300);
-            string items = "";
-
-            string webRootPath = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "forgetPwdEmail.txt");
-            string BodyEmail = System.IO.File.ReadAllText(webRootPath);
+              
+            string webRootPathA = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "forgetPwdEmail.txt");
+            string BodyEmail = System.IO.File.ReadAllText(webRootPathA);
 
             BodyEmail = BodyEmail.Replace("#Password#", Password);
+            BodyEmail = BodyEmail.Replace("#Email#", Email);
 
             cc = "";
             Bcc = "akuhevents@gmail.com";
@@ -173,7 +170,7 @@ namespace AKUH_API.Controllers
             try
             {
                 MailMessage mail = new MailMessage();
-                mail.To.Add(ToEmail);
+                mail.To.Add(Email);
                 mail.From = new MailAddress("akuhevents@gmail.com");
                 mail.Subject = SubJect;
                 string Body = BodyEmail;
@@ -190,12 +187,52 @@ namespace AKUH_API.Controllers
                     smtp.Send(mail);
                 }
 
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
             }
+             
+            //string ToEmail, SubJect, cc, Bcc;
+            //ToEmail = Email;
+            //SubJect = "Password Updated";
+
+            //DateTime dt = DateTime.UtcNow.AddMinutes(300);
+            //string items = "";
+
+            //string webRootPath = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "forgetPwdEmail.txt");
+            //string BodyEmail = System.IO.File.ReadAllText(webRootPath);
+
+            //BodyEmail = BodyEmail.Replace("#Password#", Password);
+            //BodyEmail = BodyEmail.Replace("#Email#", Email);
+            //cc = "";
+            //Bcc = "akuhevents@gmail.com";
+
+            //try
+            //{
+            //    MailMessage mail = new MailMessage();
+            //    mail.To.Add(ToEmail);
+            //    mail.From = new MailAddress("akuhevents@gmail.com");
+            //    mail.Subject = SubJect;
+            //    string Body = BodyEmail;
+            //    mail.Body = Body;
+            //    mail.IsBodyHtml = true;
+
+            //    using (SmtpClient smtp = new SmtpClient())
+            //    {
+            //        smtp.UseDefaultCredentials = false;
+            //        smtp.Port = 587;
+            //        smtp.Host = "smtp.gmail.com";
+            //        smtp.EnableSsl = true;
+            //        smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "ueuzxvrsgtaxdbev");
+            //        smtp.Send(mail);
+            //    }
+
+
+            //}
+            //catch (Exception ex)
+            //{
+
+            //}
 
         }
 

@@ -253,13 +253,14 @@ namespace AKUH_API.Repositories
             int result = 0;
             try
             {
-                SqlParameter[] p = new SqlParameter[4];
+                SqlParameter[] p = new SqlParameter[5];
                 p[0] = new SqlParameter("@FullName", user.FullName);                
                 p[1] = new SqlParameter("@ContactNo", user.PhoneNo);
                
                 p[2] = new SqlParameter("@Updatedon", DateTime.UtcNow.AddMinutes(300));
                 
                 p[3] = new SqlParameter("@UserID", user.AttendeesID);
+                p[4] = new SqlParameter("@Password", user.Password);
 
 
                 //result = Convert.ToInt32(new DBHelper().GetTableFromSP("sp_CustomerEdit_API", p).Rows[0]["UserID"]);
@@ -408,28 +409,41 @@ namespace AKUH_API.Repositories
             try
             {
                 var data = GetUserFromEmail(email);
-                if (data.AttendeesID != null)
+                if (data.AttendeesID != 0)
                 {
+                    //Random random = new Random();
+                    //string Password = random.Next(10000000, 99999999).ToString();
                     Random random = new Random();
-                    string Password = random.Next(10000000, 99999999).ToString();
+                    const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                    int passwordLength = 8;
+
+                    string password = new string(Enumerable.Repeat(chars, passwordLength)
+                                                      .Select(s => s[random.Next(s.Length)]).ToArray());
 
                     int result = 0;
                     try
                     {
                         SqlParameter[] p = new SqlParameter[3];
-                        p[0] = new SqlParameter("@Password", Password);
+                        p[0] = new SqlParameter("@Password", password);
                         p[1] = new SqlParameter("@Email", data.Email);
-                        p[2] = new SqlParameter("@UpdatedDate", DateTime.UtcNow.AddMinutes(300));
+                        p[2] = new SqlParameter("@Updatedon", DateTime.UtcNow.AddMinutes(300));
 
                         result = (new DBHelper().ExecuteNonQueryReturn)("sp_EditPassword_API", p);
                         
                         rsp.Status = "1";
-                        rsp.Password = Password;
+                        rsp.Email = email;
+                        rsp.Password = password;
                     }
                     catch (Exception ex)
                     {
                         return rsp;
                     }
+                }
+                else
+                {
+                    rsp.Status = "0";
+                    rsp.Email = "";
+                    rsp.Password = "";
                 }
                 return rsp;
             }
