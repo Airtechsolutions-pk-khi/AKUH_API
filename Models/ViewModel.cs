@@ -333,8 +333,8 @@ namespace AKUH_API.Models
         public string? Password { get; set; }        
         public string? PhoneNo { get; set; }        
         public int? StatusID { get; set; }
-        public DateTime? CreatedDate { get; set; }
-        public DateTime? UpdatedDate { get; set; }
+        public DateTime Createdon { get; set; }
+        public DateTime? Updatedon { get; set; }
         public int? UpdatedBy { get; set; }
     }
     public class EventCategoryBLL

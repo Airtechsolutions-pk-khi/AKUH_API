@@ -277,15 +277,15 @@ namespace AKUH_API.Controllers
             string BodyEmail = System.IO.File.ReadAllText(webRootPathA);
 
             //Customer
-            BodyEmail = BodyEmail.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
+            BodyEmail = BodyEmail.Replace("#RegistrationDate#", DateTime.UtcNow.AddMinutes(300).ToString("dd-MM-yyyy"));
             BodyEmail = BodyEmail.Replace("#CustomerContact#", obj.PhoneNo.ToString());
-            BodyEmail = BodyEmail.Replace("#CustomerName#", obj.PhoneNo.ToString());
+            BodyEmail = BodyEmail.Replace("#CustomerName#", obj.FullName.ToString());
 
             string webRootPathB = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "userRegistered.txt");
             string BodyEmailadmin = System.IO.File.ReadAllText(webRootPathB);
 
             //Admin
-            BodyEmailadmin = BodyEmailadmin.Replace("#RegistrationDate#", obj.CreatedDate.ToString());
+            BodyEmailadmin = BodyEmailadmin.Replace("#RegistrationDate#", DateTime.UtcNow.AddMinutes(300).ToString("dd-MM-yyyy"));
             BodyEmailadmin = BodyEmailadmin.Replace("#CustomerContact#", obj.PhoneNo.ToString());
             BodyEmailadmin = BodyEmailadmin.Replace("#CustomerName#", obj.FullName.ToString());
 
