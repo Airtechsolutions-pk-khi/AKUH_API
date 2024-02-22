@@ -323,6 +323,8 @@ namespace AKUH_API.Models
 
         public int? UpdatedBy { get; set; }
 
+        public bool IsPasswordUpdate { get; set; }
+
     }
 
     public class AttendeeRegsiterBLL

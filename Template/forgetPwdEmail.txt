@@ -155,7 +155,7 @@
                                                                                                                             <div>
 
 
-                                                                                                                                <div style="font-family: inherit; text-align: inherit; font-size: 20px">Dear Sir/Madam, </div>
+                                                                                                                                <div style="font-family: inherit; text-align: inherit; font-size: 20px">This is to inform you that your password has been successfully reset. </div>
                                                                                                                     </tr>
                                                                                                                 </tbody>
                                                                                                             </table>
@@ -163,8 +163,8 @@
                                                                                                                 <tbody>
                                                                                                                     <tr>
                                                                                                                         <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                                                                                                        <div style="font-family: inherit; text-align: inherit; font-size: 20px">Your Email is: #Email#</div>
-                                                                                                                            <div style="font-family: inherit; text-align: inherit; font-size: 20px">Your new password is: #Password#</div>
+                                                                                                                        <div style="font-family: inherit; text-align: inherit; font-size: 20px">Email: #Email#</div>
+                                                                                                                            <div style="font-family: inherit; text-align: inherit; font-size: 20px">password: #Password#</div>
                                                                                                                         </td>
                                                                                                                     </tr>
                                                                                                                 </tbody>

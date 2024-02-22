@@ -200,8 +200,8 @@
                                                                             <tr>
                                                                                 <td align="left" style="padding-top:25px;">
                                                                                     <!--<div class="InviteEmailUltimate-logo" height="25px"><a href="#"><img src="logo-new.png" style="height:100px; display: block; border: none; outline: none; text-decoration: none; text-align: center; font-size: 20px; " title="AKU" align="center" height="20" width="102.4" alt="AKU" border="0"></a></div>-->
-                                                                                    
-                                                                                    <img  class="max-width" border="0" style="display: block; width: 138px; padding-bottom: 20px;" alt="" data-proportionally-constrained="true" data-responsive="false" src="http://akuapp-001-site2.mysitepanel.net/assets/img/logo-new.png">
+
+                                                                                    <img class="max-width" border="0" style="display: block; width: 100px; padding-bottom: 20px;" alt="" data-proportionally-constrained="true" data-responsive="false" src="http://akuapp-001-site2.mysitepanel.net/assets/img/logo-new.png">
                                                                                 </td>
                                                                             </tr>
                                                                             <!--<tr>
@@ -218,14 +218,17 @@
                                                                 <td>
                                                                     <table cellpadding="0" cellspacing="0" border="0">
                                                                         <tbody>
+                                                                            <p style="padding-bottom:6px ;"><strong>Thank you for registering for the 9th AKU Annual Surgical Conference. </strong></p>
+                                                                            
+                                                                            <p style="padding-bottom:10px ;"><strong>Registration Details: </strong></p>
                                                                             <tr>
-                                                                                <td colspan="2" style="font-size:  18px; padding-bottom: 5px; ">Name of Participant: #CustomerName#</td>
+                                                                                <td colspan="2" style=" padding-bottom: 5px; ">Name of Participant: #CustomerName#</td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td colspan="2" style="font-size: 18px; padding-bottom: 5px; ">Contact #: #CustomerContact#</td>
+                                                                                <td colspan="2" style="padding-bottom: 5px; ">Contact #: #CustomerContact#</td>
                                                                             </tr>
                                                                             <tr>
-                                                                                <td colspan="2" style="font-size: 18px; padding-bottom: 5px; ">Registration Date: #RegistrationDate#</td>
+                                                                                <td colspan="2" style="padding-bottom: 5px; ">Registration Date: #RegistrationDate#</td>
                                                                             </tr>
                                                                         </tbody>
                                                                     </table>
@@ -261,47 +264,30 @@
                                                     <table cellpadding="0" cellspacing="0" border="0" style="width: 25px; "></table>
                                                 </td>
                                                 <td style="width: 100%;padding-bottom:10px; ">
-                                                    <p style="padding-bottom:10px ;"><strong >Online Payment Methods: </strong></p>
-                                                    <p style="padding-bottom:6px; "> &bull; Submit your Registration fees Online through: <a target="_blank" href="https://payonline.aku.edu/">https://payonline.aku.edu/</a></p>
-                                                    <p style="padding-bottom:6px; "> &bull; Registration Fees for Physician and Consultant is 5000/- + 5% SST – Total: Rs 5250</p>
-                                                    <p style="padding-bottom:6px; "> &bull; Registration Fees for Residents is 3000/- + 5% SST – Total: Rs 3150</p>
-                                                    <p style="padding-bottom:6px; "> &bull; Registration Fees for Students is 2500 + 5% SST – Total: Rs 2625</p>
+                                                    <p style="padding-bottom:6px ;"><strong>To complete your registration, please proceed with the payment: </strong></p>
+                                                    <p style="padding-bottom:14px; ">  Payment Method: <a target="_blank" href="https://payonline.aku.edu/">https://payonline.aku.edu/</a></p>
+                                                    <p style="padding-bottom:6px; ">  <strong>Registration Fees (inclusive of 5% SST):</strong></p>
+                                                    <p style="padding-bottom:6px; "> &bull; 	Physicians and Consultants: 5000/- + 5% SST – Total: Rs 5250/-</p>
+                                                    <p style="padding-bottom:6px; "> &bull; 	Residents: Rs 3000/- + 5% SST – Total: Rs 3150/-</p>
+                                                    <p style="padding-bottom:14px; "> &bull; 	Students: Rs 2500/- + 5% SST – Total: Rs 2625/-</p>
+                                                    <p style="padding-bottom:6px; ">  <strong>Payment Details:</strong></p>
                                                     <p style="padding-bottom:6px; "> &bull; Applicant reference no: 9AASC</p>
                                                     <p style="padding-bottom:6px; "> &bull; Apply payments toward: Medical College (MC)</p>
                                                     <p style="padding-bottom:6px; "> &bull; Purpose of Payment: Main Conference 9th AKU Annual Surgical Conference</p>
-                                                    <p style="padding-bottom:6px; "> &bull; Important: (This is for all the above payment methods):</p>
+                                                    <p style="padding-bottom:14px; "> &bull; Important: (This is for all the above payment methods):</p>
+                                                    <p style="padding-bottom:6px; ">  <strong>Note:</strong></p>
+                                                    <p style="padding-bottom:6px; "> &bull; Registration is only confirmed after submitting the registration fee.</p>
+                                                    
                                                     <p style="padding-bottom:6px; ">
                                                         &bull; A scanned copy of your receipt or screenshot of your payment transaction along with your AKU ID Card copy should be emailed to <strong>surgery.events@aku.edu</strong>
                                                     </p>
-                                                    <h4 style="padding-bottom:6px; ">  Registration is only confirmed after submitting the registration fee.</h4>
+                                                    <h4 style="padding-bottom:6px; ">  Thank you! We look forward to welcoming you to the conference.</h4>
                                                     <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
                                                         <tbody>
                                                             <tr>
                                                                 <td class="soft-td-spacer" style="width: 15px; display: block; ">&nbsp;</td>
                                                                 <td>
-                                                                    <table cellpadding="0" cellspacing="0" border="0" style="font-family: &quot;-apple-system&quot; BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-weight: 300; color: #3B3C51; ">
-                                                                        <tbody>
-                                                                            <!--<tr>
-                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Namee: #CustomerName#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Contact #: #CustomerContact#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Registration Date: #RegistrationDate#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Start Date:#EventStartDate#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">End Date: #EventEndDate#</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td colspan="2" style="font-size: 20px; padding-bottom: 10px; ">Event Time: #EventTime#</td>
-                                                                            </tr>-->
-
-                                                                        </tbody>
-                                                                    </table>
+                                                                   
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -317,9 +303,7 @@
                                                                             <tr>
                                                                                 <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="25px">&nbsp;</td>
                                                                             </tr>
-                                                                            <tr>
-                                                                                <td style="font-family: &quot;-apple-system&quot;, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 300; color: #9ca6af; text-align: left; line-height: 17px; " align="center" st-content="fulltext-content">If you have any query feel free to contact:<br><a style="color: #14aaf5; " href="#">surgery.events@aku.edu</a></td>
-                                                                            </tr>
+                                                                           
                                                                             <tr>
                                                                                 <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="25px">&nbsp;</td>
                                                                             </tr>

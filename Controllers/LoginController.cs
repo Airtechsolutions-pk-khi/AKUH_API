@@ -297,7 +297,7 @@ namespace AKUH_API.Controllers
                 MailMessage mail = new MailMessage();
                 mail.To.Add(obj.Email);
                 mail.From = new MailAddress("akuhevents@gmail.com");
-                mail.Subject = "Make Payment to Get Approved";
+                mail.Subject = "Make Payment To Register";
                 string Body = BodyEmail;
                 mail.Body = Body;
                 mail.IsBodyHtml = true;
