@@ -156,7 +156,7 @@ namespace AKUH_API.Controllers
         public void SendEmailtoCust(string Password, string Email)
         {
             string ToEmail, SubJect, cc, Bcc;
-            SubJect = "Password Updated";
+            SubJect = "Password Updated – 9th Annual Surgical Conference";
               
             string webRootPathA = System.IO.Path.Combine(_hostingEnvironment.ContentRootPath, "Template", "forgetPwdEmail.txt");
             string BodyEmail = System.IO.File.ReadAllText(webRootPathA);
@@ -297,7 +297,7 @@ namespace AKUH_API.Controllers
                 MailMessage mail = new MailMessage();
                 mail.To.Add(obj.Email);
                 mail.From = new MailAddress("akuhevents@gmail.com");
-                mail.Subject = "Make Payment To Register";
+                mail.Subject = "Make Payment To Register – 9th Annual Surgical Conference";
                 string Body = BodyEmail;
                 mail.Body = Body;
                 mail.IsBodyHtml = true;

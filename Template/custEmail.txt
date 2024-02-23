@@ -194,22 +194,15 @@
                                                                                     <div style="display: none; font-size: 1px; color: #fff; line-height:  1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; ">Accept Invite</div>
                                                                                 </td>
                                                                             </tr>
-                                                                            <!--<tr>
-                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="30px">&nbsp;</td>
-                                                                            </tr>-->
+                                                                           
                                                                             <tr>
                                                                                 <td align="left" style="padding-top:25px;">
                                                                                     <!--<div class="InviteEmailUltimate-logo" height="25px"><a href="#"><img src="logo-new.png" style="height:100px; display: block; border: none; outline: none; text-decoration: none; text-align: center; font-size: 20px; " title="AKU" align="center" height="20" width="102.4" alt="AKU" border="0"></a></div>-->
 
-                                                                                    <img class="max-width" border="0" style="display: block; width: 100px; padding-bottom: 20px;" alt="" data-proportionally-constrained="true" data-responsive="false" src="http://akuapp-001-site2.mysitepanel.net/assets/img/logo-new.png">
+                                                                                    <img class="max-width" border="0" style="display: block; width: 72px; padding-bottom: 20px;" alt="" data-proportionally-constrained="true" data-responsive="false" src="http://akuapp-001-site2.mysitepanel.net/assets/img/logo-new.png">
                                                                                 </td>
                                                                             </tr>
-                                                                            <!--<tr>
-                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="45px">&nbsp;</td>
-                                                                            </tr>
-                                                                            <tr>
-                                                                                <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="10px">&nbsp;</td>
-                                                                            </tr>-->
+                                                                            
                                                                         </tbody>
                                                                     </table>
                                                                 </td>
@@ -219,7 +212,7 @@
                                                                     <table cellpadding="0" cellspacing="0" border="0">
                                                                         <tbody>
                                                                             <p style="padding-bottom:6px ;"><strong>Thank you for registering for the 9th AKU Annual Surgical Conference. </strong></p>
-                                                                            
+
                                                                             <p style="padding-bottom:10px ;"><strong>Registration Details: </strong></p>
                                                                             <tr>
                                                                                 <td colspan="2" style=" padding-bottom: 5px; ">Name of Participant: #CustomerName#</td>
@@ -277,17 +270,16 @@
                                                     <p style="padding-bottom:14px; "> &bull; Important: (This is for all the above payment methods):</p>
                                                     <p style="padding-bottom:6px; ">  <strong>Note:</strong></p>
                                                     <p style="padding-bottom:6px; "> &bull; Registration is only confirmed after submitting the registration fee.</p>
-                                                    
+
                                                     <p style="padding-bottom:6px; ">
                                                         &bull; A scanned copy of your receipt or screenshot of your payment transaction along with your AKU ID Card copy should be emailed to <strong>surgery.events@aku.edu</strong>
                                                     </p>
                                                     <h4 style="padding-bottom:6px; ">  Thank you! We look forward to welcoming you to the conference.</h4>
-                                                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
+                                                    <!--<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; ">
                                                         <tbody>
                                                             <tr>
                                                                 <td class="soft-td-spacer" style="width: 15px; display: block; ">&nbsp;</td>
                                                                 <td>
-                                                                   
                                                                 </td>
                                                             </tr>
                                                             <tr>
@@ -303,7 +295,7 @@
                                                                             <tr>
                                                                                 <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="25px">&nbsp;</td>
                                                                             </tr>
-                                                                           
+
                                                                             <tr>
                                                                                 <td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; " colspan="1" height="25px">&nbsp;</td>
                                                                             </tr>
@@ -312,11 +304,107 @@
                                                                 </td>
                                                             </tr>
                                                         </tbody>
-                                                    </table>
+                                                    </table>-->
                                                 </td>
                                                 <td class="hard-td-spacer" style="width: 25px; ">
                                                     <table cellpadding="0" cellspacing="0" border="0" style="width: 25px; "></table>
                                                 </td>
+
+
+
+
+
+
+
+
+                                                <table class="module" role="module" data-type="divider" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="f7373f10-9ba4-4ca7-9a2e-1a2ba700deb9.1">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="padding:5px 30px 0px 30px;" role="module-content" height="100%" valign="top" bgcolor="">
+                                                                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="1px" style="line-height:3px; font-size:2px;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="padding:0px 0px 3px 0px;background-color: #383838"></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                                <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+                                                    <tr>
+                                                        <td valign="middle" class="bg_light footer email-section">
+                                                            <table style="">
+                                                                <tr>
+                                                                    <td valign="top" width="33.333%" style="padding-top: 20px;padding-left: 20px; padding-bottom: 10px">
+                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                            <tr>
+                                                                                <td style="text-align: left; padding: 10px">
+                                                                                    <p>
+                                                                                        Conference Secretariat<br />
+                                                                                        Aga Khan University<br />
+                                                                                        Stadium Road,P.O. Box 3500​,
+                                                                                        Karachi, 74800, Pakistan
+                                                                                    </p>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+                                                                    <td valign="top" width="33.333%" style="padding-top: 20px;">
+                                                                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                                            <tr>
+                                                                                <td style="text-align: left;  padding: 10px;">
+                                                                                    <h3 class="heading" style="margin-top: 0;">Contact Info</h3>
+                                                                                    <ul>
+                                                                                        <li><a href="" style="color: black" class="text">Tel: +92 21 3486 ​4578/4584​​ </a></li>
+                                                                                        <li><a href="" style="color: black" class="text">Fax: +92 21 3493 4294 ​​​​</a></li>
+                                                                                        <li>
+                                                                                            <a href="" style="color: black" class="text">
+                                                                                                Email: conf.sect@aku.edu  /
+                                                                                                surgery.events@aku.edu
+                                                                                            </a>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </table>
+                                                                    </td>
+
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr><!-- end: tr -->
+
+                                                </table>
+
+
+
+
+
+                                                <table border="0" cellpadding="0" cellspacing="0" class="module" data-role="module-button" data-type="button" role="module" style="table-layout:fixed;" width="100%" data-muid="e5cea269-a730-4c6b-8691-73d2709adc62">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td align="center" class="outer-td" style="padding: 10px 0px 10px 0px; background: #00843D !important; color: #f1f1f1;">
+                                                                <table border="0" cellpadding="0" cellspacing="0" class="wrapper-mobile" style="text-align:center;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td align="center" class="inner-td" style="" target="_blank"><a style="color:#ffffff;" href="">AKU Surgery Conference</a></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+
+
+
+
+
+
                                             </tr>
                                         </tbody>
                                     </table>

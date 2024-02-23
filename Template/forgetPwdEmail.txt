@@ -104,15 +104,15 @@
     </style>
     <!--user entered Head Start-->
     <link href="https://fonts.googleapis.com/css?family=Viga&display=swap" rel="stylesheet">
-    <style>
+    <!--<style>
         body {
             font-family: 'Viga', sans-serif;
         }
-    </style><!--End Head user entered-->
+    </style>--> 
 </head>
 
 <body>
-    <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:14px; font-family:inherit; color:#000000; background-color:#f0f0f0;">
+    <center class="wrapper" data-link-color="#1188E6" data-body-style="font-size:16px; font-family:inherit; color:#000000; background-color:#f0f0f0;">
         <div class="webkit">
             <table cellpadding="0" cellspacing="0" border="0" width="100%" class="wrapper" bgcolor="#f0f0f0">
                 <tbody>
@@ -151,11 +151,7 @@
                                                                                                             <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="264ee24b-c2b0-457c-a9c1-d465879f9935">
                                                                                                                 <tbody>
                                                                                                                     <tr>
-                                                                                                                        <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                                                                                                            <div>
-
-
-                                                                                                                                <div style="font-family: inherit; text-align: inherit; font-size: 20px">This is to inform you that your password has been successfully reset. </div>
+                                                                                                                       <td><img class="max-width" border="0" style="display: block; width: 72px; " alt="" data-proportionally-constrained="true" data-responsive="false" src="http://akuapp-001-site2.mysitepanel.net/assets/img/logo-new.png"></td>
                                                                                                                     </tr>
                                                                                                                 </tbody>
                                                                                                             </table>
@@ -163,8 +159,19 @@
                                                                                                                 <tbody>
                                                                                                                     <tr>
                                                                                                                         <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
-                                                                                                                        <div style="font-family: inherit; text-align: inherit; font-size: 20px">Email: #Email#</div>
-                                                                                                                            <div style="font-family: inherit; text-align: inherit; font-size: 20px">password: #Password#</div>
+                                                                                                                             
+
+
+                                                                                                                                <div style="font-family: inherit; text-align: inherit; font-size: 16px"><strong>This is to inform you that your password has been successfully reset.</strong> </div>
+                                                                                                                    </tr>
+                                                                                                                </tbody>
+                                                                                                            </table>
+                                                                                                            <table class="module" role="module" data-type="text" border="0" cellpadding="0" cellspacing="0" width="100%" style="table-layout: fixed;" data-muid="264ee24b-c2b0-457c-a9c1-d465879f9935">
+                                                                                                                <tbody>
+                                                                                                                    <tr>
+                                                                                                                        <td style="padding-top: 30px;line-height:22px;text-align:inherit;" height="100%" valign="top" bgcolor="" role="module-content">
+                                                                                                                            <div style="font-family: inherit; text-align: inherit; font-size: 16px">Email: #Email#</div>
+                                                                                                                            <div style="font-family: inherit; text-align: inherit; font-size: 16px">password: #Password#</div>
                                                                                                                         </td>
                                                                                                                     </tr>
                                                                                                                 </tbody>
@@ -176,7 +183,7 @@
                                                                                                                             <div>
                                                                                                                                 <div style="font-family: inherit; text-align: inherit;padding-top: 0px;">
                                                                                                                                     <span style="        color: #383838;
-        font-size: 25px;
+        font-size: 16px;
         font-family: inherit">Your password has been reset!</span>
                                                                                                                                 </div><div></div>
                                                                                                                             </div>
@@ -198,7 +205,7 @@
                                                                                 <tbody>
                                                                                     <tr>
                                                                                         <td style="padding:20px 30px 0px 30px;" role="module-content" height="100%" valign="top" bgcolor="">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="3px" style="line-height:3px; font-size:3px;">
+                                                                                            <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" height="3px" style="line-height:3px; font-size:2px;">
                                                                                                 <tbody>
                                                                                                     <tr>
                                                                                                         <td style="padding:0px 0px 3px 0px;background-color: #383838"></td>
@@ -237,10 +244,12 @@
                                                                                                                 <ul>
                                                                                                                     <li><a href="" style="color: black" class="text">Tel: +92 21 3486 ​4578/4584​​ </a></li>
                                                                                                                     <li><a href="" style="color: black" class="text">Fax: +92 21 3493 4294 ​​​​</a></li>
-                                                                                                                    <li><a href="" style="color: black" class="text">
-    Email: conf.sect@aku.edu  /
-    surgery.events@aku.edu
-</a></li>
+                                                                                                                    <li>
+                                                                                                                        <a href="" style="color: black" class="text">
+                                                                                                                            Email: conf.sect@aku.edu  /
+                                                                                                                            surgery.events@aku.edu
+                                                                                                                        </a>
+                                                                                                                    </li>
                                                                                                                 </ul>
                                                                                                             </td>
                                                                                                         </tr>
