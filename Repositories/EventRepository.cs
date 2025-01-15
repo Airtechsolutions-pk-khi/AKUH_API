@@ -63,6 +63,7 @@ namespace AKUH_API.Repositories
                                 Designation = k.Designation,
                                 Company = k.Company,
                                 About = k.About,
+                                Type = k.Type,
                                 Image = "http://akuapp-001-site2.mysitepanel.net/" + k.Image,
                                 Createdon = k.Createdon
 

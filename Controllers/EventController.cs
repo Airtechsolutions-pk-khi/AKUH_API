@@ -192,7 +192,7 @@ namespace AKUH_API.Controllers
                     smtp.Port = 587;
                     smtp.Host = "smtp.gmail.com";                     
                     smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "ueuzxvrsgtaxdbev");                     
+                    smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "xkezqmvksalkwwom");                     
                     smtp.Send(mail);                    
                 }
 
@@ -218,7 +218,7 @@ namespace AKUH_API.Controllers
                     smtp.Port = 587;
                     smtp.Host = "smtp.gmail.com";
                     smtp.EnableSsl = true;
-                    smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "ueuzxvrsgtaxdbev");
+                    smtp.Credentials = new NetworkCredential("akuhevents@gmail.com", "xkezqmvksalkwwom");
                     smtp.Send(mail);
                 }
                  

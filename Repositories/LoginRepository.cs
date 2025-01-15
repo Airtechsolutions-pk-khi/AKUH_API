@@ -154,14 +154,14 @@ namespace AKUH_API.Repositories
         //            }
         //            else
         //            {
-                        
+
         //                int userid = repo.UserID = Convert.ToInt32(_dt.Rows[0][0]);
         //                rspLogin = new RspLogin()
         //                {
         //                    description = "Login Success.",
         //                    status =200,
         //                    login = JArray.Parse(Newtonsoft.Json.JsonConvert.SerializeObject(_dt)).ToObject<List<UserBLL>>().FirstOrDefault(),
-                            
+
         //                };
         //                return rspLogin;
         //            }
@@ -180,6 +180,41 @@ namespace AKUH_API.Repositories
         //        return rspLogin;
         //    }
         //}
+        public async Task<int> AttendeeRegisterOnLogin(string email )
+        {
+            int result = 0;
+            try
+            {
+                SqlParameter[] p1 = new SqlParameter[1];
+                p1[0] = new SqlParameter("@Email", email);
+                _dt = await (new DBHelper().GetTableFromSPAsync)("sp_CheckUser_API", p1);
+                if (_dt.Rows.Count == 0)
+                {
+                    SqlParameter[] p = new SqlParameter[6];
+                    p[0] = new SqlParameter("@Email", email);
+                    p[1] = new SqlParameter("@UserName", "Guest");
+                    p[2] = new SqlParameter("@Phone", "");
+                    p[3] = new SqlParameter("@StatusID", 101);
+                    p[4] = new SqlParameter("@CreatedDate", DateTime.UtcNow.AddMinutes(300));
+                    p[5] = new SqlParameter("@UpdatedBy", 1);
+                    //result = (new DBHelper().ExecuteNonQueryReturn)("sp_RegisterAttendees_API", p);
+                    result = Convert.ToInt32(new DBHelper().GetTableFromSP("sp_RegisterAttendees_API", p).Rows[0]["AttendeesID"]);
+                }
+                else
+                {
+                    int attendeeID = _dt.AsEnumerable()
+                     .Select(row => row.Field<int>("AttendeesID"))
+                     .FirstOrDefault();
+                    return attendeeID;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return 0;
+            }
+            return result;
+        }
         public async Task<int> AttendeeRegister(AttendeeRegsiterBLL obj)
         {
             int result = 0;

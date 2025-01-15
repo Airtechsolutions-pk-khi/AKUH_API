@@ -41,6 +41,8 @@ namespace AKUH_API.Models
     public class RspLogin
     {
         public EventAttendeesBLL? login { get; set; }
+        //public int AttendeesID { get; set; }
+        
         public string? description { get; set; }
         public int? status { get; set; }
 
@@ -576,7 +578,7 @@ namespace AKUH_API.Models
         public string? Designation { get; set; }
 
         public string? Company { get; set; }
-
+        public string? Type { get; set; }
         public string? About { get; set; }
 
         public string? Image { get; set; }
@@ -681,6 +683,12 @@ namespace AKUH_API.Models
         public AttendeesBLL? attendees { get; set; }
         public string? description { get; set; }
         public int? status { get; set; }
+    }
+    public class RspAttendeesUser
+    {
+        public int AttendeesID { get; set; }
+        public string? Status { get; set; }
+        public string? Description { get; set; }
     }
     public class RspUpdtAttendees
     {

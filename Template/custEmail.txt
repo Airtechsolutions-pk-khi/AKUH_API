@@ -211,7 +211,7 @@
                                                                 <td>
                                                                     <table cellpadding="0" cellspacing="0" border="0">
                                                                         <tbody>
-                                                                            <p style="padding-bottom:6px ;"><strong>Thank you for registering for the 9th AKU Annual Surgical Conference. </strong></p>
+                                                                            <p style="padding-bottom:6px ;"><strong>Thank you for registering for the 10th AKU Annual Surgical Conference. </strong></p>
 
                                                                             <p style="padding-bottom:10px ;"><strong>Registration Details: </strong></p>
                                                                             <tr>
@@ -264,9 +264,9 @@
                                                     <p style="padding-bottom:6px; "> &bull; 	Residents: Rs 3000/- + 5% SST – Total: Rs 3150/-</p>
                                                     <p style="padding-bottom:14px; "> &bull; 	Students: Rs 2500/- + 5% SST – Total: Rs 2625/-</p>
                                                     <p style="padding-bottom:6px; ">  <strong>Payment Details:</strong></p>
-                                                    <p style="padding-bottom:6px; "> &bull; Applicant reference no: 9AASC</p>
+                                                    <p style="padding-bottom:6px; "> &bull; Applicant reference no: 10AASC</p>
                                                     <p style="padding-bottom:6px; "> &bull; Apply payments toward: Medical College (MC)</p>
-                                                    <p style="padding-bottom:6px; "> &bull; Purpose of Payment: Main Conference 9th AKU Annual Surgical Conference</p>
+                                                    <p style="padding-bottom:6px; "> &bull; Purpose of Payment: Main Conference 10th AKU Annual Surgical Conference</p>
                                                     <p style="padding-bottom:14px; "> &bull; Important: (This is for all the above payment methods):</p>
                                                     <p style="padding-bottom:6px; ">  <strong>Note:</strong></p>
                                                     <p style="padding-bottom:6px; "> &bull; Registration is only confirmed after submitting the registration fee.</p>
